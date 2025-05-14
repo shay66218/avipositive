@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>השראה לאבי כהן ✨</title>
+  <style>
+    body {
+      direction: rtl;
+      font-family: 'Arial', sans-serif;
+      background: #f0f8ff;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 300px;
+    }
+
+    .quote-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #e6f7ff;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #333;
+      display: none;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ברוך הבא, אבי כהן! 🌟</h1>
+  <p>כתוב משהו... כל דבר שתרצה:</p>
+
+  <input type="text" id="userInput" placeholder="הקלד כאן...">
+  <button onclick="respondWithQuote()">שלח</button>
+
+  <div class="quote-box" id="quoteBox"></div>
+
+  <div class="footer">נוצר באהבה עבורך, אבי כהן 💙</div>
+
+  <script>
+    const quotes = [
+      "החיים מתחילים איפה שהפחד נגמר.",
+      "כל יום הוא הזדמנות חדשה להתחיל מחדש.",
+      "אושר הוא לא יעד – הוא דרך חיים.",
+      "כשהלב פתוח – הכל אפשרי.",
+      "אתה הרבה יותר חזק ממה שאתה חושב.",
+      "הכוח נמצא ברגע הזה.",
+      "אל תוותר על עצמך – אפילו לא לרגע.",
+      "חלומות מתגשמים כשפועלים באמונה.",
+      "תן לחיוך שלך להוביל את היום שלך.",
+      "גם דרך ארוכה מתחילה בצעד קטן."
+    ];
+
+    function respondWithQuote() {
+      const input = document.getElementById("userInput").value.trim();
+      const quoteBox = document.getElementById("quoteBox");
+
+      if (input === "") {
+        alert("אנא כתוב משהו...");
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const selectedQuote = quotes[randomIndex];
+
+      quoteBox.textContent = `"${selectedQuote}"`;
+      quoteBox.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
